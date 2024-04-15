@@ -1,0 +1,54 @@
+<form (submit)="ajouterConge()" [formGroup]="FormCongee">
+  <div class="form-group">
+    <label for="type">Type</label>
+    <select class="form-control" id="type" formControlName="type" name="type" required>
+      <option value="ANNUEL">Annuel</option>
+      <option value="EXCEPTIONNEL">Exceptionnel</option>
+    </select>
+  </div>
+  <div class="form-group" *ngIf="conge.type">
+    <label for="solde">Solde</label>
+    <input type="number" class="form-control" id="solde"  name="solde" required>
+  </div>
+  <div class="form-group" *ngIf="conge.type">
+    <label for="user">Utilisateur</label>
+    <input type="text" class="form-control" id="user"  name="user" required>
+  </div>
+  <div class="form-group" *ngIf="conge.type === 'EXCEPTIONNEL'">
+    <label for="motif">Motif</label>
+    <select class="form-control" id="motif"  name="motif" (change)="toggleOther()">
+      <option value="">Sélectionnez un motif</option>
+      <option *ngFor="let option of motifOptions" [value]="option.value">{{ option.label }}</option>
+    </select>
+    <div *ngIf="showOther">
+      <label for="motif">Autre motif :</label>
+      <input type="text" class="form-control" id="motif"  name="motif">
+    </div>
+  </div>
+  <div class="form-group" *ngIf="conge.type">
+    <label for="statut">Statut</label>
+    <input type="text" class="form-control" id="statut"  name="statut" required>
+  </div>
+  <div class="form-group" >
+    <label for="dateDebut">Date de début</label>
+    <input type="date" class="form-control" id="dateDebut" formControlName="date_debut"  name="dateDebut" required>
+  </div>
+<!-- <div class="form-group" *ngIf="conge.type">
+    <label for="dateFin">Date de fin</label>
+    <input type="date" class="form-control" id="dateFin" [(ngModel)]="conge.date_fin" name="dateFin" required>
+  </div>-->
+  <div class="form-group" *ngIf="conge.type">
+    <label for="duree">Durée</label>
+    <input type="number" class="form-control" id="duree" [(ngModel)]="conge.duree" name="duree" required>
+  </div>
+  <div class="form-group">
+
+    <label for="product-image" > Fichier </label>
+
+    <div class="col-md-10"><input id="file" class="form-control" type="file" (change)="onChange($event)" /></div>
+
+</div>
+
+
+  <button type="submit" class="btn btn-primary">Enregistrer</button>
+</form>

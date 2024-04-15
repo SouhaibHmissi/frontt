@@ -1,0 +1,114 @@
+<!--<div>
+  <table>
+    <thead>
+      <tr>
+        <th>date demande</th>
+        <th>date debut</th>
+        <th>date fin</th>
+        <th>durée</th>
+        <th>statut</th>
+        <th>solde</th>
+        <th>type</th>
+        <th>motif</th>
+        <th>file</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let conge of conges">
+        <td>{{ conge.date_demande }}</td>
+        <td>{{ conge.date_debut }}</td>
+        <td>{{ conge.date_fin }}</td>
+        <td>{{ conge.duree }}</td>
+        <td>{{ conge.statut }}</td>
+        <td>{{ conge.solde }}</td>
+        <td>{{ conge.type }}</td>
+        <td>{{ conge.motif }}</td>
+        <td>{{ conge.file }}</td>
+        <td>
+          <input type="hidden" name="id" [value]="conge.id" />
+          <button (click)="refuserConge(conge)" type="button">Refuser</button>
+        </td>
+        <td>
+          <input type="hidden" name="id"  [value]="conge.id"   />
+          <button (click)="confirmerConge(conge)" type="button">Valider</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+-->
+
+
+    <div class="head-title">
+      <div class="left">
+        <h1>Congés</h1>
+        <ul class="breadcrumb">
+          <li>
+            <a href="#">Congés</a>
+          </li>
+          <li><i class='bx bx-chevron-right' ></i></li>
+          <li>
+            <a class="active"  href="#" (click)="redirectToHome()">Acceuil</a>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+
+
+
+    <div class="table-data">
+      <div class="order">
+        <div class="head">
+          <h3>Congés</h3>
+          <i class='bx bx-search' ></i>
+          <i class='bx bx-filter' ></i>
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>date demande</th>
+              <th>date debut</th>
+              <th>date fin</th>
+              <th>durée</th>
+              <th>statut</th>
+              <th>solde</th>
+              <th>type</th>
+              <th>motif</th>
+              <th>file</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let conge of conges">
+              <td>{{ conge.date_demande }}</td>
+              <td>{{ conge.date_debut }}</td>
+              <td>{{ conge.date_fin }}</td>
+              <td>{{ conge.duree }}</td>
+
+              <td >
+                <span [ngStyle]="getStatusStyle(conge.statut)">{{ conge.statut }}</span>
+              </td>
+
+
+                            <td>{{ conge.solde }}</td>
+              <td>{{ conge.type }}</td>
+              <td>{{ conge.motif }}</td>
+              <td>{{ conge.file }}</td>
+              <td>
+                <input type="hidden" name="id" [value]="conge.id" />
+                <i  class="fa-solid fa-x fa-lg" (click)="refuserConge(conge)"  title="Refuser" style="color: #ff2929;"></i>
+                &nbsp;
+                <input type="hidden" name="id"  [value]="conge.id"   />
+                <i class="fa-solid fa-check fa-xl" (click)="confirmerConge(conge)"   title="Confirmer" style="color: #34e540;"></i>
+              </td>
+            </tr>
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+

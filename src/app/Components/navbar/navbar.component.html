@@ -1,0 +1,35 @@
+
+  <nav id="navbar" >
+    <i class='bx bx-menu'></i>
+    <form action="#">
+
+    </form>
+
+    <input type="checkbox" id="switch-mode" hidden>
+    <label for="switch-mode" class="switch-mode">
+    </label>
+
+
+
+
+
+    <a href="#" class="notification">
+      <i class='bx bxs-bell' ></i>
+      <span class="num">8</span>
+    </a>
+    <div class="dropdown">
+      <div class="dropdown">
+        <a href="#" class="profile" (click)="toggleDropdown($event)">
+          <img src="" alt="">
+        </a>
+        <div class="dropdown-content" *ngIf="dropdownOpen">
+          <a href="#">Profil</a>
+          <a href="#" class="logout" style="color: #DB504A;">
+            <i class='bx bxs-log-out-circle'></i>
+            <span class="text" (click)="onLogout()">Déconnexion</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+

@@ -1,0 +1,18 @@
+<form (ngSubmit)="onSubmit()" #chefForm="ngForm">
+  <div>
+    <label>Nom :</label><input type="text" [(ngModel)]="chef.nom" name="nom"> <br>
+    <label>Prénom :</label><input type="text" [(ngModel)]="chef.prenom" name="prenom"> <br>
+    <label>statut :</label><input type="text" [(ngModel)]="chef.statut" name="statut"> <br>
+    <label>nbr_enfant :</label><input type="text" [(ngModel)]="chef.nbr_enfant" name="nbr_enfant"> <br>
+    <label>Service :</label><input type="text" [(ngModel)]="chef.service" name="service"> <br>
+    <label>Téléphone :</label><input type="text" [(ngModel)]="chef.tel" name="tel"> <br>
+    <label>Sexe :</label><input type="text" [(ngModel)]="chef.sexe" name="sexe"> <br>
+    <label>Email :</label><input type="text" [(ngModel)]="chef.email" name="mail"> <br>
+    <label>matricule :</label><input type="text" [(ngModel)]="chef.matricule" name="matricule"> <br>
+    <label>Rôle :</label><input type="text" [(ngModel)]="chef.role" name="role"> <br>
+    <label>Adresse :</label><input type="text" [(ngModel)]="chef.login" name="adr"> <br>
+</div>
+    <div>
+        <button type="submit">Modifier</button>
+    </div>
+</form>

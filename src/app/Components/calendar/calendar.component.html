@@ -1,0 +1,22 @@
+
+<div class="head-title" style="margin-bottom: 20px;">
+    <div class="left">
+      <h1>Calendrier des congés</h1>
+      <ul class="breadcrumb">
+        <li>
+          <a href="#">Calendrier</a>
+        </li>
+        <li><i class='bx bx-chevron-right' ></i></li>
+        <li>
+          <a class="active" href="#">Home</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+<full-calendar [options]="calendarOptions">
+    <ng-template #eventContent let-arg>
+      <b>{{arg.timeText}}</b>
+      <i>{{arg.event.title}}</i>
+    </ng-template>
+  </full-calendar>
